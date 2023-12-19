@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title >MENU DESIGN</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="hero">
+    <div class="selector">
+      <div id="selectField">
+        <p id="selectText">select item</p>
+        <img src="menuProjImg/arrow-icon.png" id="arrowIcon">
+      </div>
+      <ul id="list" class="hide">
+        <li class="options">
+          <img src="menuProjImg/hat-icon.png">
+          <p>hat</p>
+        </li>
+        <li class="options">
+          <img src="menuProjImg/shirt-icon.png">
+          <p>shirt</p>
+        </li>
+        <li class="options">
+          <img src="menuProjImg/shoe-icon.png">
+          <p>shoe</p>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <script>
+    var selectField = document.getElementById("selectField");
+    var selectText = document.getElementById("selectText");
+    var options = document.getElementsByClassName("options");
+    var list = document.getElementById("list");
+    var arrowIcon = document.getElementById("arrowIcon");
+
+    selectField.onclick = function(){
+      list.classList.toggle("hide");
+      arrowIcon.classList.toggle("rotate");
+    }
+
+    for(option of options){
+      option.onclick = function(){
+        selectText.innerHTML = this.textContent;
+        list.classList.toggle("hide");
+        arrowIcon.classList.toggle("rotate");
+      }
+    }
+
+  </script>
+
+  
+  
+
+  
+</body>
+</html>
